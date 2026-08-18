@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STREFA WORKS — Audyty i modernizacje stref fitness</title>
+  <meta name="description" content="Audytujemy, projektujemy i modernizujemy prywatne strefy fitness i wellness w nieruchomościach mieszkaniowych, hotelowych i komercyjnych.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://strefaworks.pl/">
+  <meta name="theme-color" content="#111315">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="STREFA WORKS — Fitness Room Audit">
+  <meta property="og:description" content="Lepsze strefy fitness. Mniej problemów dla zarządcy.">
+  <meta property="og:url" content="https://strefaworks.pl/">
+
+  <style>
+    :root{
+      --bg:#0f1113;
+      --panel:#15191d;
+      --panel-2:#1b2025;
+      --text:#f4f6f8;
+      --muted:#aeb6bf;
+      --line:#2a3138;
+      --accent:#d7ff67;
+      --accent-2:#bde947;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(0,0,0,.28);
+      --max:1180px;
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(15,17,19,.82);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.04em}
+    .brand-mark{
+      width:34px;height:34px;border:1px solid var(--line);border-radius:10px;
+      display:grid;place-items:center;color:var(--accent);font-size:18px
+    }
+    .nav-links{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--white)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--line);
+      background:transparent;color:var(--white);font-weight:700;cursor:pointer;
+      transition:.2s ease
+    }
+    .btn:hover{transform:translateY(-1px);border-color:#46515d}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#111315}
+    .btn-primary:hover{background:var(--accent-2);border-color:var(--accent-2)}
+    .hero{
+      padding:104px 0 84px;
+      background:
+        radial-gradient(circle at 86% 14%,rgba(215,255,103,.12),transparent 30%),
+        radial-gradient(circle at 15% 80%,rgba(255,255,255,.04),transparent 32%);
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase
+    }
+    .eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+    h1{
+      font-size:clamp(46px,7vw,88px);line-height:.98;letter-spacing:-.045em;
+      margin:22px 0 24px;max-width:980px
+    }
+    .lead{font-size:clamp(19px,2.5vw,26px);color:#c7cdd4;max-width:800px;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+    .hero-proof{
+      margin-top:58px;display:grid;grid-template-columns:repeat(4,1fr);
+      border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:rgba(255,255,255,.015)
+    }
+    .proof{padding:24px;border-right:1px solid var(--line)}
+    .proof:last-child{border-right:0}
+    .proof strong{display:block;font-size:26px;letter-spacing:-.03em}
+    .proof span{display:block;margin-top:4px;color:var(--muted);font-size:13px}
+    section{padding:88px 0}
+    .section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:start;margin-bottom:44px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:0}
+    .section-head p{font-size:19px;color:var(--muted);margin:4px 0 0;max-width:700px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;min-height:220px
+    }
+    .card-num{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.12em}
+    .card h3{font-size:22px;line-height:1.15;margin:22px 0 10px}
+    .card p{color:var(--muted);margin:0}
+    .audit{
+      background:#f3f5f7;color:#131619
+    }
+    .audit .section-head p{color:#5f6973}
+    .audit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .score{
+      background:#111315;color:var(--white);border-radius:var(--radius);padding:34px;
+      min-height:420px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .score-value{font-size:clamp(70px,10vw,138px);line-height:.9;letter-spacing:-.07em;color:var(--accent);font-weight:850}
+    .score small{color:#adb5bd;font-size:14px}
+    .deliverables{
+      background:#fff;border:1px solid #d9dee3;border-radius:var(--radius);padding:30px
+    }
+    .deliverables ul{list-style:none;padding:0;margin:20px 0 0}
+    .deliverables li{padding:14px 0;border-bottom:1px solid #e8ebee;display:flex;gap:12px}
+    .deliverables li:last-child{border-bottom:0}
+    .tick{color:#5e8d00;font-weight:900}
+    .process-row{
+      display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);
+      border-radius:var(--radius);overflow:hidden
+    }
+    .step{padding:28px;background:var(--panel);border-right:1px solid var(--line)}
+    .step:last-child{border-right:0}
+    .step b{font-size:13px;color:var(--accent);letter-spacing:.1em}
+    .step h3{margin:34px 0 8px;font-size:23px}
+    .step p{margin:0;color:var(--muted);font-size:14px}
+    .pilot{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px
+    }
+    .price-box{
+      padding:40px;border-radius:var(--radius);background:var(--accent);color:#111315
+    }
+    .price{font-size:clamp(58px,8vw,98px);letter-spacing:-.06em;font-weight:850;line-height:.9;margin:20px 0 12px}
+    .price-box p{max-width:500px}
+    .pilot-copy{
+      background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:40px
+    }
+    .pilot-copy h3{font-size:30px;margin:0 0 12px}
+    .pilot-copy p{color:var(--muted)}
+    .route{
+      margin-top:18px;padding:18px 0;border-top:1px solid var(--line);
+      font-weight:800;letter-spacing:.06em;font-size:13px;color:#d7dbe0
+    }
+    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:stretch}
+    .about-card,.about-copy{border:1px solid var(--line);border-radius:var(--radius);padding:36px;background:var(--panel)}
+    .about-card{display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+    .about-card .initials{font-size:88px;line-height:1;font-weight:850;letter-spacing:-.07em;color:var(--accent)}
+    .about-copy h2{font-size:42px;line-height:1.05;margin:0 0 18px}
+    .about-copy p{color:var(--muted);font-size:18px}
+    .contact{
+      background:#f3f5f7;color:#131619
+    }
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}
+    .contact h2{font-size:clamp(40px,5vw,62px);line-height:1;letter-spacing:-.04em;margin:0 0 18px}
+    .contact p{color:#5e6770;font-size:18px}
+    .contact-details{margin-top:34px;display:grid;gap:10px}
+    .contact-details a{font-weight:750}
+    form{
+      background:#fff;border:1px solid #d8dde2;border-radius:var(--radius);
+      padding:30px;box-shadow:0 16px 40px rgba(16,20,24,.06)
+    }
+    label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}
+    .field{margin-bottom:17px}
+    input,textarea{
+      width:100%;border:1px solid #cfd5db;border-radius:12px;background:#fff;color:#15181b;
+      padding:13px 14px;outline:none
+    }
+    input:focus,textarea:focus{border-color:#737d86;box-shadow:0 0 0 3px rgba(0,0,0,.05)}
+    textarea{min-height:128px;resize:vertical}
+    .form-note{font-size:12px;color:#707981;margin-top:12px}
+    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .hero{padding-top:72px}
+      .hero-proof,.cards,.process-row{grid-template-columns:1fr 1fr}
+      .proof:nth-child(2){border-right:0}
+      .proof:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .section-head,.audit-grid,.pilot,.about,.contact-grid{grid-template-columns:1fr}
+      .section-head{gap:18px}
+      .step:nth-child(2){border-right:0}
+      .step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    }
+    @media (max-width:620px){
+      .wrap{width:min(calc(100% - 28px),var(--max))}
+      .nav-inner{height:66px}
+      .nav .btn{display:none}
+      .hero-proof,.cards,.process-row{grid-template-columns:1fr}
+      .proof,.step{border-right:0;border-bottom:1px solid var(--line)}
+      .proof:last-child,.step:last-child{border-bottom:0}
+      section{padding:68px 0}
+      .card{min-height:0}
+      .price-box,.pilot-copy,.about-card,.about-copy{padding:28px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"STREFA WORKS",
+    "url":"https://strefaworks.pl/",
+    "email":"igor@strefaworks.pl",
+    "telephone":"+48 537 918 161",
+    "areaServed":"Warszawa",
+    "description":"Audyty funkcjonalne, projektowanie i modernizacja stref fitness i wellness w nieruchomościach."
+  }
+  </script>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="STREFA WORKS — strona główna">
+        <span class="brand-mark">SW</span>
+        <span>STREFA WORKS</span>
+      </a>
+      <nav class="nav-links" aria-label="Nawigacja główna">
+        <a href="#audit">Audyt</a>
+        <a href="#process">Proces</a>
+        <a href="#pilot">Program pilotażowy</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn" href="#kontakt">Umów rozmowę</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Fitness &amp; Wellness Infrastructure</span>
+        <h1>Lepsze strefy fitness.<br>Mniej problemów dla zarządcy.</h1>
+        <p class="lead">Audytujemy, projektujemy i modernizujemy prywatne strefy fitness i wellness w nieruchomościach mieszkaniowych, hotelowych i komercyjnych.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontakt">Umów 15-minutową rozmowę</a>
+          <a class="btn" href="#audit">Zobacz zakres audytu</a>
+        </div>
+
+        <div class="hero-proof" aria-label="Najważniejsze informacje">
+          <div class="proof"><strong>90–120 min</strong><span>wizja lokalna</span></div>
+          <div class="proof"><strong>7 dni</strong><span>na gotowy raport</span></div>
+          <div class="proof"><strong>0–100</strong><span>Fitness Room Score</span></div>
+          <div class="proof"><strong>3 warianty</strong><span>modernizacji i budżetu</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Strefa fitness powinna pracować na wartość nieruchomości.</h2>
+          <p>W wielu obiektach wyposażenie powstaje przy oddaniu inwestycji, a później przez lata nie jest całościowo oceniane. Efekt to nieefektywne wykorzystanie przestrzeni, przypadkowy dobór sprzętu i trudne decyzje zakupowe po stronie zarządcy.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-num">01 / PRZESTRZEŃ</span>
+            <h3>Layout i wykorzystanie powierzchni</h3>
+            <p>Oceniamy układ funkcjonalny, komunikację, strefowanie oraz realną użyteczność dostępnych metrów.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">02 / WYPOSAŻENIE</span>
+            <h3>Sprzęt i możliwości treningowe</h3>
+            <p>Sprawdzamy, co warto zostawić, przenieść, uzupełnić lub wymienić — bez uzależnienia rekomendacji od jednego producenta.</p>
+          </article>
+          <article class="card">
+            <span class="card-num">03 / DECYZJA</span>
+            <h3>Budżet i priorytety</h3>
+            <p>Klient otrzymuje uporządkowany materiał, który można przedstawić zarządowi wspólnoty, inwestorowi lub właścicielowi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit" id="audit">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Fitness Room Audit</h2>
+          <p>Ustandaryzowany audyt funkcjonalny prywatnej strefy fitness zakończony raportem, oceną stanu i konkretną roadmapą modernizacji.</p>
+        </div>
+
+        <div class="audit-grid">
+          <div class="score">
+            <div>
+              <small>Przykładowy wskaźnik</small>
+              <div class="score-value">58/100</div>
+            </div>
+            <div>
+              <strong>FITNESS ROOM SCORE</strong>
+              <small>Ocena funkcjonalności, wyposażenia, ergonomii, organizacji i doświadczenia użytkownika.</small>
+            </div>
+          </div>
+
+          <div class="deliverables">
+            <strong>Po audycie otrzymujesz:</strong>
+            <ul>
+              <li><span class="tick">✓</span><span>Fitness Room Score 0–100</span></li>
+              <li><span class="tick">✓</span><span>raport stanu obecnego i dokumentację problemów</span></li>
+              <li><span class="tick">✓</span><span>rekomendowany układ funkcjonalny</span></li>
+              <li><span class="tick">✓</span><span>rekomendacje dotyczące wyposażenia</span></li>
+              <li><span class="tick">✓</span><span>3 warianty modernizacji: REFRESH / UPGRADE / PREMIUM</span></li>
+              <li><span class="tick">✓</span><span>orientacyjne budżety i roadmapę dalszych działań</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Od diagnozy do działającej przestrzeni.</h2>
+          <p>Audyt jest punktem wejścia. W zależności od potrzeb możemy poprowadzić również dalsze etapy projektu.</p>
+        </div>
+
+        <div class="process-row">
+          <div class="step"><b>01 / AUDIT</b><h3>Diagnoza</h3><p>Ocena stanu, funkcjonalności, wyposażenia i potrzeb.</p></div>
+          <div class="step"><b>02 / DESIGN</b><h3>Koncepcja</h3><p>Układ, wyposażenie, warianty inwestycji i budżet.</p></div>
+          <div class="step"><b>03 / DELIVERY</b><h3>Wdrożenie</h3><p>Specyfikacja, dostawcy, koordynacja i odbiór.</p></div>
+          <div class="step"><b>04 / OPERATIONS</b><h3>Obsługa</h3><p>Serwisy, standard strefy, raportowanie i rozwój.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pilot">
+      <div class="wrap">
+        <div class="pilot">
+          <div class="price-box">
+            <span class="eyebrow" style="color:#111315">Program pilotażowy</span>
+            <div class="price">2 900 zł</div>
+            <strong>netto / pełny audyt</strong>
+            <p>Pierwsze 3 realizacje w Warszawie. Po zakończeniu programu standardowa cena Fitness Room Audit wyniesie 4 900 zł netto.</p>
+            <a class="btn" style="border-color:#111315;color:#111315;margin-top:14px" href="#kontakt">Zapytaj o pilota</a>
+          </div>
+
+          <div class="pilot-copy">
+            <h3>Pełny produkt, nie „szybka konsultacja”.</h3>
+            <p>Program pilotażowy obejmuje wizję lokalną, analizę, raport, trzy warianty modernizacji, orientacyjne budżety, prezentację wyników i jedną turę zmian.</p>
+            <div class="route">AUDIT → DESIGN → DELIVERY → OPERATIONS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap about">
+        <div class="about-card">
+          <span class="eyebrow">Lead Consultant</span>
+          <div class="initials">IS</div>
+          <div>
+            <strong>Igor Stelmaszczyk</strong><br>
+            <span style="color:var(--muted)">STREFA WORKS</span>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <h2>Praktyczne spojrzenie na infrastrukturę fitness.</h2>
+          <p>STREFA WORKS łączy praktyczne doświadczenie treningowe z podejściem projektowym i biznesowym. Celem nie jest sprzedaż jak największej liczby urządzeń, tylko poprawa funkcjonalności strefy i ułatwienie zarządcy podjęcia dobrej decyzji inwestycyjnej.</p>
+          <p>Audyt funkcjonalny nie zastępuje wymaganych przeglądów technicznych urządzeń. Problemy techniczne wskazywane są do dalszej weryfikacji przez właściwy serwis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="wrap contact-grid">
+        <div>
+          <span class="eyebrow" style="color:#4f6f00">Kontakt</span>
+          <h2>Masz w zarządzanym obiekcie strefę fitness?</h2>
+          <p>Porozmawiajmy 15 minut i sprawdźmy, czy audyt ma w tym przypadku sens.</p>
+          <div class="contact-details">
+            <a href="mailto:igor@strefaworks.pl">igor@strefaworks.pl</a>
+            <a href="mailto:kontakt@strefaworks.pl">kontakt@strefaworks.pl</a>
+            <a href="tel:+48537918161">+48 537 918 161</a>
+          </div>
+        </div>
+
+        <form action="https://formsubmit.co/kontakt@strefaworks.pl" method="POST">
+          <input type="hidden" name="_subject" value="Nowe zapytanie — STREFA WORKS">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://strefaworks.pl/?sent=1#kontakt">
+
+          <div class="field">
+            <label for="name">Imię i nazwisko</label>
+            <input id="name" name="Imię i nazwisko" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="company">Firma / nieruchomość</label>
+            <input id="company" name="Firma / nieruchomość" autocomplete="organization">
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="E-mail" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Krótko opisz obiekt lub problem</label>
+            <textarea id="message" name="Wiadomość" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+          <p class="form-note">Wysyłając formularz, przekazujesz dane wyłącznie w celu odpowiedzi na zapytanie. Przed uruchomieniem kampanii warto dodać osobną politykę prywatności i zgodę formularza.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> STREFA WORKS</span>
+      <span>Fitness &amp; Wellness Infrastructure</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      const form = document.querySelector('form');
+      if (form) {
+        const msg = document.createElement('div');
+        msg.style.marginBottom = '18px';
+        msg.style.padding = '14px 16px';
+        msg.style.borderRadius = '12px';
+        msg.style.background = '#edf8cf';
+        msg.style.color = '#263400';
+        msg.style.fontWeight = '700';
+        msg.textContent = 'Dziękuję — wiadomość została wysłana.';
+        form.prepend(msg);
+      }
+    }
+  </script>
+</body>
+</html>
